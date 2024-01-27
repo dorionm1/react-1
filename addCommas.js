@@ -1,9 +1,9 @@
-//starting position of comma (can change IF num is negative)
-let isNeg = 0;
-
 function addCommas(num) {
   let stringNum = num.toString();
   let commafiedNumArr = [];
+  let formattedNum;
+
+  let isNeg = 0;
   //conditional for IF number is negative
   if (stringNum.indexOf('-') === 0) {
     stringNum = stringNum.substring(1);
@@ -43,10 +43,14 @@ function addCommas(num) {
     }
   }
   if (isNeg === 1) {
-    console.log('-'.concat(commafiedNumArr.join('')));
+    formattedNum = '-'.concat(commafiedNumArr.join(''));
   } else {
-    console.log(commafiedNumArr.join(''));
+    formattedNum = commafiedNumArr.join('');
   }
+  console.log(formattedNum)
+  return formattedNum
 }
 
-addCommas(-1233333333333333333);
+addCommas(-500000)
+
+module.exports = addCommas;
