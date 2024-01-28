@@ -17,6 +17,10 @@ function App() {
     setWords(newWords);
   };
 
+  const handleResetClick = () => {
+    setWords("")
+  };
+
   return (
     <div>
       <MadLibsImages/>
@@ -25,7 +29,7 @@ function App() {
         {!word ?
         <MadLibsForm onFormSubmit={handleFormSubmit}/>
         :
-        <MadLibsText noun={word.noun} noun2={word.noun2} adjective={word.adjective} color={word.color}/>
+        <MadLibsText noun={word.noun} noun2={word.noun2} adjective={word.adjective} color={word.color} onBtnClick={handleResetClick}/>
         }
       </div>
     </div>
